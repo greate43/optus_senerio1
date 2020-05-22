@@ -7,7 +7,8 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+class ItemAdapter(private val clickListener: (item: String) -> Unit) :
+    RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     private var mData: List<String> = Collections.emptyList()
 
@@ -28,13 +29,14 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.btn.text = mData[position]
         holder.btn.setOnClickListener {
-
+            clickListener(mData[position])
         }
     }
 
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val btn = itemView.findViewById<Button>(R.id.btnItem)
+        val btn: Button = itemView.findViewById<Button>(R.id.btnItem)
+
     }
 
 }
