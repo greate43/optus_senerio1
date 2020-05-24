@@ -18,7 +18,7 @@ class PlaceholderFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         pageViewModel.setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
+        pageViewModel.setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
 
     }
 
@@ -32,8 +32,12 @@ class PlaceholderFragment : Fragment() {
             textView.text = it
         })
 
-        root.setOnClickListener{
-            Toast.makeText(requireContext(),"Fragment ${arguments?.getInt(ARG_SECTION_NUMBER) ?: 1}",Toast.LENGTH_SHORT).show()
+        root.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                "Fragment ${arguments?.getInt(ARG_SECTION_NUMBER) ?: 1}",
+                Toast.LENGTH_SHORT
+            ).show()
         }
         return root
     }
@@ -53,10 +57,10 @@ class PlaceholderFragment : Fragment() {
         fun newInstance(sectionNumber: Int): PlaceholderFragment {
             return PlaceholderFragment()
                 .apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_SECTION_NUMBER, sectionNumber)
+                    arguments = Bundle().apply {
+                        putInt(ARG_SECTION_NUMBER, sectionNumber)
+                    }
                 }
-            }
         }
     }
 }

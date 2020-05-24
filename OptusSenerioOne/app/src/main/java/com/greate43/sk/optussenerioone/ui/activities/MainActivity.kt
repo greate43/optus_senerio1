@@ -2,7 +2,6 @@ package com.greate43.sk.optussenerioone.ui.activities
 
 import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +18,7 @@ import kotlinx.android.synthetic.main.content_scrolling.*
 const val COLOR_EXTRA = "COLOR_EXTRA"
 const val DISPLAY_ITEM_EXTRA = "DISPLAY_ITEM_EXTRA"
 const val VALUE_NOT_SET = -1
+
 class MainActivity : AppCompatActivity() {
     lateinit var adapter: ItemAdapter
     var color: Int = VALUE_NOT_SET
@@ -64,9 +64,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        color = savedInstanceState.getInt(COLOR_EXTRA,VALUE_NOT_SET)
-        Log.d("d","color $color")
-        displayItemData = savedInstanceState.getString(DISPLAY_ITEM_EXTRA,resources.getString(R.string.displayItemStringDefault))
+        color = savedInstanceState.getInt(COLOR_EXTRA, VALUE_NOT_SET)
+        Log.d("d", "color $color")
+        displayItemData = savedInstanceState.getString(
+            DISPLAY_ITEM_EXTRA,
+            resources.getString(R.string.displayItemStringDefault)
+        )
         if (color != VALUE_NOT_SET) {
             setButtonBackgroundColor(color)
         }
@@ -88,8 +91,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         // set up the RecyclerView
-        for (i in 0 until 5){
-            data.add("item${i+1}")
+        for (i in 0 until 5) {
+            data.add("item${i + 1}")
         }
         adapter = ItemAdapter { data ->
             displayItemData = data
