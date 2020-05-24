@@ -1,4 +1,4 @@
-package com.greate43.sk.optussenerioone
+package com.greate43.sk.optussenerioone.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

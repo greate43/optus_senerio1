@@ -1,4 +1,4 @@
-package com.greate43.sk.optussenerioone
+package com.greate43.sk.optussenerioone.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.greate43.sk.optussenerioone.R
+import com.greate43.sk.optussenerioone.model.PageViewModel
 
 class PlaceholderFragment : Fragment() {
 
@@ -49,7 +51,8 @@ class PlaceholderFragment : Fragment() {
          */
         @JvmStatic
         fun newInstance(sectionNumber: Int): PlaceholderFragment {
-            return PlaceholderFragment().apply {
+            return PlaceholderFragment()
+                .apply {
                 arguments = Bundle().apply {
                     putInt(ARG_SECTION_NUMBER, sectionNumber)
                 }

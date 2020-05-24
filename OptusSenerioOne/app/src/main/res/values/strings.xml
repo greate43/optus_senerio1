@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Optus Senerio One</string>
+    <string name="displayItemStringDefault">From point 1, click any item out of 5 and that item name should be populated in Point 4 as TextView.</string>
 
 </resources>

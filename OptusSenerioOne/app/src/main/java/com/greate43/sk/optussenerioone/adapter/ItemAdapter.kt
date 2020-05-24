@@ -1,10 +1,11 @@
-package com.greate43.sk.optussenerioone
+package com.greate43.sk.optussenerioone.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.greate43.sk.optussenerioone.R
 import java.util.*
 
 class ItemAdapter(private val clickListener: (item: String) -> Unit) :

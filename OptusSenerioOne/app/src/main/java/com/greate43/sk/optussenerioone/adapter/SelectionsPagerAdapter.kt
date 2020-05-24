@@ -1,9 +1,10 @@
-package com.greate43.sk.optussenerioone
+package com.greate43.sk.optussenerioone.adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.greate43.sk.optussenerioone.ui.fragments.PlaceholderFragment
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
